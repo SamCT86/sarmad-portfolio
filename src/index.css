@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Professional Design System for Sarmad Tawfeek - AI & SaaS Entrepreneur */
+
+@layer base {
+  :root {
+    /* Base colors - Professional tech palette */
+    --background: 0 0% 100%;
+    --foreground: 225 15% 8%;
+    
+    /* AI/Tech brand colors - Blue to Purple gradient system */
+    --primary: 224 76% 48%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 224 76% 58%;
+    --primary-dark: 224 76% 38%;
+    
+    --secondary: 280 89% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 280 89% 75%;
+    --secondary-dark: 280 89% 55%;
+    
+    /* Neutral system */
+    --muted: 220 13% 96%;
+    --muted-foreground: 225 15% 45%;
+    --muted-dark: 225 15% 25%;
+    
+    --accent: 224 100% 97%;
+    --accent-foreground: 225 15% 8%;
+    
+    /* UI elements */
+    --card: 0 0% 100%;
+    --card-foreground: 225 15% 8%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 76% 48%;
+    
+    /* Gradients - AI/Innovation themed */
+    --gradient-primary: linear-gradient(135deg, hsl(224, 76%, 48%), hsl(280, 89%, 65%));
+    --gradient-subtle: linear-gradient(135deg, hsl(224, 100%, 97%), hsl(280, 100%, 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(224, 76%, 48%) 0%, hsl(280, 89%, 65%) 100%);
+    
+    /* Shadows - Elegant and professional */
+    --shadow-soft: 0 2px 8px hsl(225 15% 8% / 0.08);
+    --shadow-medium: 0 4px 16px hsl(225 15% 8% / 0.12);
+    --shadow-large: 0 8px 32px hsl(225 15% 8% / 0.16);
+    --shadow-glow: 0 0 0 1px hsl(224 76% 48% / 0.1), 0 4px 16px hsl(224 76% 48% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero gradient background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  /* Subtle gradient backgrounds */
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Professional shadows */
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-medium {
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .shadow-large {
+    box-shadow: var(--shadow-large);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Text gradients for headings */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Navigation active state */
+  .nav-active {
+    position: relative;
+  }
+  
+  .nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    border-radius: 1px;
+  }
+}
