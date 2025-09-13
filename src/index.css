@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
 /* Professional Design System for Sarmad Tawfeek - AI & SaaS Entrepreneur */
 
 @layer base {
@@ -138,30 +136,14 @@
   }
   
   /* Professional shadows */
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-  
-  .shadow-medium {
-    box-shadow: var(--shadow-medium);
-  }
-  
-  .shadow-large {
-    box-shadow: var(--shadow-large);
-  }
-  
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
-  }
+  .shadow-soft { box-shadow: var(--shadow-soft); }
+  .shadow-medium { box-shadow: var(--shadow-medium); }
+  .shadow-large { box-shadow: var(--shadow-large); }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
   
   /* Smooth transitions */
-  .transition-smooth {
-    transition: var(--transition-smooth);
-  }
-  
-  .transition-bounce {
-    transition: var(--transition-bounce);
-  }
+  .transition-smooth { transition: var(--transition-smooth); }
+  .transition-bounce { transition: var(--transition-bounce); }
   
   /* Text gradients for headings */
   .text-gradient {
@@ -179,16 +161,12 @@
   }
   
   /* Navigation active state */
-  .nav-active {
-    position: relative;
-  }
-  
+  .nav-active { position: relative; }
   .nav-active::after {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 0;
-    right: 0;
+    left: 0; right: 0;
     height: 2px;
     background: var(--gradient-primary);
     border-radius: 1px;
