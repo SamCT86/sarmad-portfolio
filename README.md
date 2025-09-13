@@ -1,73 +1,47 @@
-# Welcome to your Lovable project
+# 🌐 Sarmad Tawfeek – Personlig Portfolio
 
-## Project info
+Min personliga hemsida byggd för att presentera mig som entreprenör och tech-founder.  
+Hemsidan fungerar som ett digitalt visitkort för investerare, medgrundare och partners.  
 
-**URL**: https://lovable.dev/projects/fcc3607f-4f2b-4bf2-bc71-62d992d09cb6
+🚀 Live-demo: [sarmadtawfeek.vercel.app](https://sarmadtawfeek.vercel.app)
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ Innehåll
 
-**Use Lovable**
+- **Startsida (Hero):** Kort tagline + call-to-action
+- **Om mig:** Min bakgrund (detaljhandel, bygg/fuktinspektör, nu AI & SaaS)
+- **Projekt:**  
+  - PulsePilot AI – churn-analys med AI  
+  - ReturLogik – digitalisering av returflöden  
+  - Trend-to-Asset – AI som skapar & distribuerar digitala produkter
+- **Kontakt:** Mailformulär + direktlänkar till LinkedIn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fcc3607f-4f2b-4bf2-bc71-62d992d09cb6) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+- **React + TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn/ui**
+- Deploy via **Vercel**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📸 Preview
 
-Follow these steps:
+![Preview](public/selfie.jpg)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📬 Kontakt
 
-# Step 3: Install the necessary dependencies.
-npm i
+- **LinkedIn:** [Sam Lundb Taw](https://www.linkedin.com/in/sam-lundb-taw-496197207/)  
+- **E-post:** samct86@gmail.com  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+## ⚡ Licens
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/fcc3607f-4f2b-4bf2-bc71-62d992d09cb6) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT License – fritt att använda och inspireras av.
