@@ -4,15 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Send, Linkedin } from "lucide-react";
+import { Mail, Send, Linkedin, Github } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +14,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -37,19 +31,18 @@ const Contact = () => {
 
     setIsSubmitting(true);
 
-    const safeSubject = formData.subject || "Kontakt via sarmadtawfeek.com";
     const body =
       `Namn: ${formData.name}\n` +
       `E-post: ${formData.email}\n\n` +
       `Meddelande:\n${formData.message}`;
 
     const mailtoLink = `mailto:samct86@gmail.com?subject=${encodeURIComponent(
-      safeSubject
+      formData.subject
     )}&body=${encodeURIComponent(body)}`;
 
     toast({
       title: "Öppnar din e-postklient…",
-      description: "Meddelandet är förifyllt – tryck Skicka i e-postfönstret.",
+      description: "Meddelandet är förifyllt.",
     });
 
     window.location.href = mailtoLink;
@@ -57,191 +50,144 @@ const Contact = () => {
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-subtle">
+    <section id="contact" className="py-24 bg-muted/30">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">Kontakt</h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8 rounded-full" />
-            <p className="text-xl text-muted-foreground mb-4">
-              Jag är öppen för möjligheter och samarbeten inom AI och SaaS
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+            Kontakt
+          </p>
+          <h2 className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+            Hör gärna av dig
+          </h2>
+          <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
+            Jag är öppen för kontakt kring digitala projekt, automation,
+            AI-relaterade idéer och andra relevanta samarbeten.
+          </p>
+        </div>
+
+        <div className="mx-auto mt-14 grid max-w-6xl gap-8 lg:grid-cols-2">
+          <Card className="p-8 shadow-sm border-border/60">
+            <h3 className="text-xl font-semibold text-foreground">Skicka ett meddelande</h3>
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+              Fyll i formuläret så öppnas ett färdigt mejl i din e-postklient.
             </p>
-            <p className="text-lg text-gradient font-semibold">
-              Låt oss connecta och utforska möjligheter tillsammans
-            </p>
-          </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            {/* Formulär */}
-            <Card className="p-8 shadow-medium animate-slide-in">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name" className="text-foreground font-medium">
-                      Namn *
-                    </Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => handleInputChange("name", e.target.value)}
-                      className="mt-2 bg-card border border-border focus:ring-2 focus:ring-primary/30"
-                      placeholder="Ditt namn"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="email" className="text-foreground font-medium">
-                      E-post *
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => handleInputChange("email", e.target.value)}
-                      className="mt-2 bg-card border border-border focus:ring-2 focus:ring-primary/30"
-                      placeholder="din@email.com"
-                    />
-                  </div>
-                </div>
+            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+              <div>
+                <Label htmlFor="name">Namn</Label>
+                <Input
+                  id="name"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange("name", e.target.value)}
+                  placeholder="Ditt namn"
+                  className="mt-2"
+                />
+              </div>
 
-                {/* Ämne */}
-                <div>
-                  <Label htmlFor="subject" className="text-foreground font-medium">
-                    Ämne *
-                  </Label>
+              <div>
+                <Label htmlFor="email">E-post</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange("email", e.target.value)}
+                  placeholder="din@email.com"
+                  className="mt-2"
+                />
+              </div>
 
-                  <div className="mt-2">
-                    <Select
-                      value={formData.subject}
-                      onValueChange={(v) => handleInputChange("subject", v)}
-                    >
-                      <SelectTrigger
-                        id="subject"
-                        className="bg-card border border-border focus:ring-2 focus:ring-primary/30"
-                      >
-                        <SelectValue placeholder="Välj ämne" />
-                      </SelectTrigger>
+              <div>
+                <Label htmlFor="subject">Ämne</Label>
+                <Input
+                  id="subject"
+                  value={formData.subject}
+                  onChange={(e) => handleInputChange("subject", e.target.value)}
+                  placeholder="Vad gäller det?"
+                  className="mt-2"
+                />
+              </div>
 
-                      <SelectContent
-                        position="popper"
-                        sideOffset={6}
-                        className="bg-card text-foreground border border-border shadow-lg rounded-xl p-1 z-50"
-                      >
-                        <SelectItem
-                          value="Investering"
-                          className="rounded-md px-3 py-2 focus:bg-primary/10 data-[state=checked]:bg-primary/15 data-[state=checked]:font-semibold"
-                        >
-                          Investering
-                        </SelectItem>
-                        <SelectItem
-                          value="Partnerskap"
-                          className="rounded-md px-3 py-2 focus:bg-primary/10 data-[state=checked]:bg-primary/15 data-[state=checked]:font-semibold"
-                        >
-                          Partnerskap
-                        </SelectItem>
-                        <SelectItem
-                          value="Samarbete"
-                          className="rounded-md px-3 py-2 focus:bg-primary/10 data-[state=checked]:bg-primary/15 data-[state=checked]:font-semibold"
-                        >
-                          Samarbete
-                        </SelectItem>
-                        <SelectItem
-                          value="Övrigt"
-                          className="rounded-md px-3 py-2 focus:bg-primary/10 data-[state=checked]:bg-primary/15 data-[state=checked]:font-semibold"
-                        >
-                          Övrigt
-                        </SelectItem>
-                      </SelectContent>
-                    </Select>
+              <div>
+                <Label htmlFor="message">Meddelande</Label>
+                <Textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => handleInputChange("message", e.target.value)}
+                  placeholder="Berätta kort om ditt ärende…"
+                  className="mt-2 min-h-32"
+                />
+              </div>
 
-                    {/* “required”-hack för Radix Select */}
-                    <input
-                      tabIndex={-1}
-                      autoComplete="off"
-                      className="hidden"
-                      value={formData.subject}
-                      required
-                      onChange={() => {}}
-                    />
-                  </div>
-                </div>
+              <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                {isSubmitting ? "Öppnar…" : "Skicka meddelande"}
+                <Send className="ml-2 h-4 w-4" />
+              </Button>
+            </form>
+          </Card>
 
-                <div>
-                  <Label htmlFor="message" className="text-foreground font-medium">
-                    Meddelande *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    required
-                    value={formData.message}
-                    onChange={(e) => handleInputChange("message", e.target.value)}
-                    className="mt-2 min-h-32 bg-card border border-border focus:ring-2 focus:ring-primary/30"
-                    placeholder="Berätta mer om ditt meddelande…"
-                  />
-                </div>
-
-                <Button type="submit" variant="hero" size="lg" disabled={isSubmitting} className="w-full">
-                  {isSubmitting ? "Skickar…" : (
-                    <>
-                      Skicka meddelande
-                      <Send className="ml-2 w-4 h-4" />
-                    </>
-                  )}
-                </Button>
-              </form>
+          <div className="space-y-6">
+            <Card className="p-8 shadow-sm border-border/60">
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-primary" />
+                <h3 className="text-lg font-semibold text-foreground">E-post</h3>
+              </div>
+              <p className="mt-3 text-muted-foreground">
+                För direkt kontakt eller enklare frågor.
+              </p>
+              <Button variant="outline" className="mt-6 w-full" asChild>
+                <a href="mailto:samct86@gmail.com">samct86@gmail.com</a>
+              </Button>
             </Card>
 
-            {/* Snabbkontakter */}
-            <div className="space-y-8 animate-slide-in" style={{ animationDelay: "200ms" }}>
-              <Card className="p-8 shadow-soft border-primary/20">
-                <div className="flex items-center mb-4">
-                  <Mail className="w-6 h-6 text-primary mr-3" />
-                  <h3 className="text-xl font-semibold text-foreground">Direktkontakt</h3>
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  För snabba frågor eller direkta samtal
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-primary/20 hover:border-primary hover:bg-primary/5"
-                  asChild
-                >
-                  <a href="mailto:samct86@gmail.com">Skicka e-post</a>
-                </Button>
-              </Card>
-
-              <Card className="p-8 shadow-soft border-secondary/20">
-                <div className="flex items-center mb-4">
-                  <Linkedin className="w-6 h-6 text-secondary mr-3" />
-                  <h3 className="text-xl font-semibold text-foreground">LinkedIn</h3>
-                </div>
-                <p className="text-muted-foreground mb-6">
-                  Anslut för professionell networking
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full border-secondary/20 hover:border-secondary hover:bg-secondary/5"
-                  asChild
-                >
-                  <a
-                    href="https://www.linkedin.com/in/sam-lundb-taw-496197207/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Besök LinkedIn
-                  </a>
-                </Button>
-              </Card>
-
-              <div className="text-center p-6">
-                <p className="text-muted-foreground">Svarstid: Vanligtvis inom 24 timmar</p>
+            <Card className="p-8 shadow-sm border-border/60">
+              <div className="flex items-center gap-3">
+                <Linkedin className="h-5 w-5 text-primary" />
+                <h3 className="text-lg font-semibold text-foreground">LinkedIn</h3>
               </div>
+              <p className="mt-3 text-muted-foreground">
+                Min professionella profil och arbetsbakgrund.
+              </p>
+              <Button variant="outline" className="mt-6 w-full" asChild>
+                <a
+                  href="https://www.linkedin.com/in/sam-lundb-taw-496197207/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Besök LinkedIn
+                </a>
+              </Button>
+            </Card>
+
+            <Card className="p-8 shadow-sm border-border/60">
+              <div className="flex items-center gap-3">
+                <Github className="h-5 w-5 text-primary" />
+                <h3 className="text-lg font-semibold text-foreground">GitHub</h3>
+              </div>
+              <p className="mt-3 text-muted-foreground">
+                Kod, projektstruktur och pågående byggen.
+              </p>
+              <Button variant="outline" className="mt-6 w-full" asChild>
+                <a
+                  href="https://github.com/SamCT86"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Besök GitHub
+                </a>
+              </Button>
+            </Card>
+
+            <div className="px-2 pt-2">
+              <p className="text-sm text-muted-foreground">
+                Svarstid: vanligtvis inom 24 timmar.
+              </p>
             </div>
           </div>
         </div>
