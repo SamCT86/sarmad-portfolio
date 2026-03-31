@@ -1,47 +1,67 @@
-# 🌐 Sarmad Tawfeek – Personlig Portfolio
+# Sam Lundb. Taw — Personal Portfolio
 
-Min personliga hemsida byggd för att presentera mig som entreprenör och tech-founder.  
-Hemsidan fungerar som ett digitalt visitkort för investerare, medgrundare och partners.  
+A personal portfolio website presenting my background, current focus, and selected digital projects.
 
-🚀 Live-demo: [sarmadtawfeek.vercel.app](https://sarmadtawfeek.vercel.app)
+The site is designed as a simple, professional online presence for people who want to understand who I am, what I work with, and what I build alongside my day-to-day role.
 
----
+## Live Website
 
-## ✨ Innehåll
+- https://sarmadtawfeek.se
 
-- **Startsida (Hero):** Kort tagline + call-to-action
-- **Om mig:** Min bakgrund (detaljhandel, bygg/fuktinspektör, nu AI & SaaS)
-- **Projekt:**  
-  - PulsePilot AI – churn-analys med AI  
-  - ReturLogik – digitalisering av returflöden  
-  - Trend-to-Asset – AI som skapar & distribuerar digitala produkter
-- **Kontakt:** Mailformulär + direktlänkar till LinkedIn
+## What the site includes
 
----
+- **Hero section**  
+  A clear introduction and short summary of my current focus.
 
-## 🛠 Tech Stack
+- **About**  
+  My background across retail, investigation work, technical sales, and my growing interest in digital systems, automation, and AI-assisted workflows.
 
-- **React + TypeScript**
-- **Vite**
-- **Tailwind CSS**
-- **shadcn/ui**
-- Deploy via **Vercel**
+- **Selected projects**  
+  A small collection of digital systems and experiments I am building or exploring.
 
----
+- **Contact**  
+  Direct links for reaching out through email, LinkedIn, and GitHub.
 
-## 📸 Preview
+## Current focus
 
-![Preview](public/selfie.jpg)
+Right now, I spend a large part of my free time building and exploring:
 
----
+- digital systems
+- workflow automation
+- AI-assisted processes
+- e-commerce-related experiments
+- structured product and pipeline thinking
 
-## 📬 Kontakt
+## Tech stack
 
-- **LinkedIn:** [Sam Lundb Taw](https://www.linkedin.com/in/sam-lundb-taw-496197207/)  
-- **E-post:** samct86@gmail.com  
+This portfolio is built with:
 
----
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
 
-## ⚡ Licens
+Deployment:
+- Vercel
 
-MIT License – fritt att använda och inspireras av.
+## Purpose
+
+This website is intentionally simple.
+
+Its purpose is not to overstate my profile, but to create a clear and trustworthy presentation of:
+
+- who I am
+- what I have worked with
+- what I am building now
+- where people can contact me
+
+## Links
+
+- Live website: https://sarmadtawfeek.se
+- LinkedIn: https://www.linkedin.com/in/sam-lundb-taw-496197207/
+- GitHub: https://github.com/SamCT86
+- Email: sarmadtawfeek@gmail.com
+## License
+
+MIT License — free to use as inspiration.
