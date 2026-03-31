@@ -39,14 +39,15 @@ const Projects = () => {
       <div className="container mx-auto px-6">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Det jag bygger
+            Projekt
           </p>
           <h2 className="mt-4 text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
             Utvalda system och projekt
           </h2>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Jag bygger främst egna experiment och digitala system där automation,
-            paketering och praktisk affärslogik möts.
+            Här är några av de digitala system och experiment jag bygger eller utforskar.
+            Projekten fungerar både som lärande, praktisk tillämpning och ett sätt att utveckla min förståelse
+            för automation, produktlogik och digitala workflows.
           </p>
         </div>
 
@@ -84,8 +85,8 @@ const Projects = () => {
 
         <div className="mx-auto mt-12 max-w-3xl text-center">
           <p className="text-sm sm:text-base leading-relaxed text-muted-foreground">
-            Fokus ligger inte på att visa upp så många idéer som möjligt, utan på att
-            bygga genomtänkta system som går att förstå, förbättra och vidareutveckla över tid.
+            Målet med projekten är inte bara att bygga teknik, utan att förstå hur struktur,
+            användbarhet och automation kan samverka i verkliga digitala arbetsflöden.
           </p>
         </div>
       </div>
