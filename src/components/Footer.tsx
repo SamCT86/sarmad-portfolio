@@ -1,24 +1,15 @@
-import { Heart } from "lucide-react";
-
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
-      <div className="container mx-auto px-6">
+    <footer className="border-t border-border bg-background">
+      <div className="container mx-auto px-6 py-10">
         <div className="text-center">
-          <div className="mb-6">
-            <h3 className="text-2xl font-bold mb-2">Sarmad Tawfeek</h3>
-            <p className="text-background/80">
-              Entreprenör inom AI, SaaS och automation
-            </p>
-          </div>
-          
-          <div className="border-t border-background/20 pt-6">
-            <p className="text-background/60 flex items-center justify-center gap-2">
-              Byggt med 
-              <Heart className="w-4 h-4 text-red-400 fill-current" />
-              för framtiden
-            </p>
-          </div>
+          <h3 className="text-lg font-semibold text-foreground">Sam Lundb. Taw</h3>
+          <p className="mt-2 text-sm sm:text-base text-muted-foreground">
+            Personlig portfolio med fokus på digitala system, automation och AI-assisterade workflows.
+          </p>
+          <p className="mt-4 text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Sam Lundb. Taw
+          </p>
         </div>
       </div>
     </footer>
