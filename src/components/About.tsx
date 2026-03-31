@@ -61,9 +61,7 @@ const About = () => {
             En jordad väg in i digitalt byggande
           </h2>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Min väg in i tech och digitala system har inte varit rak. Jag kommer från praktiska roller
-            där ansvar, kundkontakt, struktur och verkliga problem stått i centrum. Det har format hur
-            jag arbetar idag: mindre hype, mer tydlighet, mer användbarhet.
+           Jag kommer från praktiska roller där ansvar, kundkontakt och struktur har varit en naturlig del av arbetet. Det har gett mig ett jordnära arbetssätt och en tydlig känsla för hur processer kan förbättras. Vid sidan av jobbet lägger jag mycket tid på att utforska digitala system, automation och smartare arbetsflöden.
           </p>
         </div>
 
