@@ -1,5 +1,12 @@
 import { Card } from "@/components/ui/card";
-import { Briefcase, Search, Cpu, Workflow, CheckCircle2, LineChart } from "lucide-react";
+import {
+  Briefcase,
+  Search,
+  Cpu,
+  Workflow,
+  CheckCircle2,
+  LineChart,
+} from "lucide-react";
 
 const About = () => {
   const backgroundPoints = [
