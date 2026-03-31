@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -8,7 +8,7 @@ const Navigation = () => {
   const navigationItems = [
     { id: "home", label: "Hem" },
     { id: "about", label: "Om mig" },
-    { id: "projects", label: "Projekt" },
+    { id: "projects", label: "Det jag bygger" },
     { id: "contact", label: "Kontakt" },
   ];
 
@@ -16,15 +16,13 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      // Update active section based on scroll position
       const sections = ["home", "about", "projects", "contact"];
       const currentSection = sections.find((section) => {
         const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
+        if (!element) return false;
+
+        const rect = element.getBoundingClientRect();
+        return rect.top <= 120 && rect.bottom >= 120;
       });
 
       if (currentSection) {
@@ -33,72 +31,74 @@ const Navigation = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      const offsetTop = element.offsetTop - 80;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
-    }
+    if (!element) return;
+
+    const offsetTop = element.offsetTop - 80;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-soft border-b border-border"
+          ? "bg-background/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <div className="font-semibold text-lg text-foreground">
-            Sarmad Tawfeek
-          </div>
+        <div className="flex h-20 items-center justify-between">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="text-lg font-semibold tracking-tight text-foreground"
+          >
+            Sam Lundb. Taw
+          </button>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navigationItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-sm font-medium transition-smooth hover:text-primary ${
+                className={`text-sm font-medium transition-colors ${
                   activeSection === item.id
-                    ? "text-primary nav-active"
-                    : "text-muted-foreground"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
               </button>
             ))}
-          </div>
+          </nav>
 
           <Button
-            variant="hero"
-            size="sm"
+            variant="outline"
             onClick={() => scrollToSection("contact")}
-            className="hidden md:block"
+            className="hidden md:inline-flex"
           >
             Kontakt
           </Button>
 
-          {/* Mobile menu - simplified for this version */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => scrollToSection("contact")}
-            >
-              Kontakt
-            </Button>
-          </div>
+          <Button
+            variant="outline"
+            onClick={() => scrollToSection("contact")}
+            className="md:hidden"
+            size="sm"
+          >
+            Kontakt
+          </Button>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
