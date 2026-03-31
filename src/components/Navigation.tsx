@@ -8,7 +8,7 @@ const Navigation = () => {
   const navigationItems = [
     { id: "home", label: "Hem" },
     { id: "about", label: "Om mig" },
-    { id: "projects", label: "Det jag bygger" },
+    { id: "projects", label: "Projekt" },
     { id: "contact", label: "Kontakt" },
   ];
 
