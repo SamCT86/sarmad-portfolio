@@ -61,7 +61,7 @@ const Navigation = () => {
             onClick={() => scrollToSection("home")}
             className="text-lg font-semibold tracking-tight text-foreground"
           >
-            Sam Lundb. Taw
+            Sam Tawfeek
           </button>
 
           <nav className="hidden md:flex items-center gap-8">
