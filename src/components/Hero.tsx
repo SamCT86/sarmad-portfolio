@@ -26,7 +26,7 @@ const Hero = () => {
           </p>
 
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-tight">
-            Sam Lundb. Taw
+            Sam Tawfeek
           </h1>
 
           <p className="mt-6 max-w-2xl text-xl text-foreground/90 sm:text-2xl leading-relaxed">
