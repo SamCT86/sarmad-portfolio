@@ -192,7 +192,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-foreground">Etsy</h3>
               </div>
               <p className="mt-3 text-muted-foreground">
-                Ett publikt projektspår där jag bygger och testar digital produktlogik i praktiken.
+                Ett publikt, självgående projekt där jag kombinerar automation, digital produktlogik och e-handel i praktiken.
               </p>
               <Button variant="outline" className="mt-6 w-full" asChild>
                 <a
