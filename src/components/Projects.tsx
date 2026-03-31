@@ -8,7 +8,7 @@ const Projects = () => {
     {
       title: "Kindred Archive",
       description:
-        "Ett självgående digitalt projekt för att skapa, paketera och distribuera printable wall art genom automation, bildflöden och e-handelslogik.",
+        "Digitalt projekt för att skapa, paketera och distribuera printable wall art genom automation, bildflöden och e-handelslogik.",
       icon: Store,
       tags: ["Etsy", "Automation", "Digital products"],
       link: "https://www.etsy.com/shop/kindredarchive",
