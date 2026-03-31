@@ -5,7 +5,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Send, Linkedin, Github } from "lucide-react";
+import { Mail, Send, Linkedin, Github, Store } from "lucide-react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +20,14 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleInputChange = (field: string, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
@@ -29,31 +38,54 @@ const Contact = () => {
       return;
     }
 
+    if (FORMSPREE_ENDPOINT.includes("REPLACE_WITH_YOUR_FORM_ID")) {
+      toast({
+        title: "Formspree saknas",
+        description: "Byt ut FORMSPREE_ENDPOINT i Contact.tsx mot din riktiga Formspree-länk.",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
 
-    const body =
-      `Namn: ${formData.name}\n` +
-      `E-post: ${formData.email}\n\n` +
-      `Meddelande:\n${formData.message}`;
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
 
-    const mailtoLink = `mailto:sarmadtawfeek@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(body)}`;
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
 
-    toast({
-      title: "Öppnar e-postklient…",
-      description: "Din standardapp eller webmail får välja hur mejlet skickas.",
-    });
+      toast({
+        title: "Meddelandet är skickat",
+        description: "Tack — ditt meddelande har skickats till sarmadtawfeek@gmail.com.",
+      });
 
-    window.location.href = mailtoLink;
-    setIsSubmitting(false);
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }));
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Något gick fel",
+        description: "Formuläret kunde inte skickas just nu. Prova igen eller mejla direkt.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -76,7 +108,7 @@ const Contact = () => {
           <Card className="p-8 shadow-sm border-border/60">
             <h3 className="text-xl font-semibold text-foreground">Skicka ett meddelande</h3>
             <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-              Fyll i formuläret så öppnas ett färdigt mejl till mig i din e-postklient.
+              Fyll i formuläret så skickas ditt meddelande direkt till min e-post.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
@@ -126,7 +158,7 @@ const Contact = () => {
               </div>
 
               <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
-                {isSubmitting ? "Öppnar…" : "Skicka meddelande"}
+                {isSubmitting ? "Skickar..." : "Skicka meddelande"}
                 <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
@@ -180,6 +212,25 @@ const Contact = () => {
                   rel="noopener noreferrer"
                 >
                   Besök GitHub
+                </a>
+              </Button>
+            </Card>
+
+            <Card className="p-8 shadow-sm border-border/60">
+              <div className="flex items-center gap-3">
+                <Store className="h-5 w-5 text-primary" />
+                <h3 className="text-lg font-semibold text-foreground">Etsy</h3>
+              </div>
+              <p className="mt-3 text-muted-foreground">
+                Ett publikt projektspår där jag bygger och testar digital produktlogik i praktiken.
+              </p>
+              <Button variant="outline" className="mt-6 w-full" asChild>
+                <a
+                  href="https://www.etsy.com/shop/kindredarchive"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Besök Etsy-butik
                 </a>
               </Button>
             </Card>
