@@ -20,23 +20,23 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(0,0,0,0.04),transparent_40%)]" />
       <div className="container relative mx-auto px-6">
-        <div className="max-w-3xl">
+        <div className="max-w-4xl">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
-            Portfolio / Digital systems / Automation
+            Professional profile / Digital systems / Automation
           </p>
 
           <h1 className="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl leading-tight">
             Sam Tawfeek
           </h1>
 
-          <p className="mt-6 max-w-2xl text-xl text-foreground/90 sm:text-2xl leading-relaxed">
-            Bygger digitala system, automationer och AI-drivna workflows på fritiden.
+          <p className="mt-6 max-w-3xl text-xl text-foreground/90 sm:text-2xl leading-relaxed">
+            Tekniskt nyfiken problemlösare med bakgrund inom analys, teknisk försäljning och digitala system.
           </p>
 
-          <p className="mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
-            Jag har bakgrund inom analys, teknisk försäljning och operativ problemlösning.
-            Idag utforskar jag hur AI, automation och e-handel kan användas för att skapa
-            enklare och mer skalbara digitala arbetsflöden.
+          <p className="mt-6 max-w-3xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+            Jag arbetar strukturerat, praktiskt och kundnära. Vid sidan av mitt arbete bygger jag egna
+            projekt inom automation, AI-assisterade workflows och digitala system — med fokus på tydlighet,
+            användbarhet och bättre arbetsflöden.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -45,7 +45,7 @@ const Hero = () => {
               onClick={() => scrollToSection("projects")}
               className="group"
             >
-              Se det jag bygger
+              Se projekt
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
 
