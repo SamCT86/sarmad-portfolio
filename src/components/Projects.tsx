@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Boxes, Workflow, Store, Wrench } from "lucide-react";
+import { Boxes, Workflow, Store, Wrench, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Projects = () => {
   const projects = [
@@ -10,6 +11,8 @@ const Projects = () => {
         "Ett systemspår för att skapa, paketera och strukturera digital wall art med hjälp av automation, bildflöden och e-handelslogik.",
       icon: Store,
       tags: ["Etsy", "Automation", "Digital products"],
+      link: "https://www.etsy.com/shop/kindredarchive",
+      linkLabel: "Besök Etsy-butik",
     },
     {
       title: "Revenant Engine",
@@ -78,6 +81,21 @@ const Projects = () => {
                     </Badge>
                   ))}
                 </div>
+
+                {project.link && project.linkLabel && (
+                  <div className="mt-6">
+                    <Button variant="outline" asChild>
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {project.linkLabel}
+                        <ExternalLink className="ml-2 h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                )}
               </Card>
             );
           })}
