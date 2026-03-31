@@ -1,4 +1,4 @@
-# Sam Lundb. Taw — Personal Portfolio
+# Sam Tawfeek — Personal Portfolio
 
 A personal portfolio website presenting my background, current focus, and selected digital projects.
 
