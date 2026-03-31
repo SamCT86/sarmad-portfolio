@@ -36,13 +36,13 @@ const Contact = () => {
       `E-post: ${formData.email}\n\n` +
       `Meddelande:\n${formData.message}`;
 
-    const mailtoLink = `mailto:samct86@gmail.com?subject=${encodeURIComponent(
+    const mailtoLink = `mailto:sarmadtawfeek@gmail.com?subject=${encodeURIComponent(
       formData.subject
     )}&body=${encodeURIComponent(body)}`;
 
     toast({
-      title: "Öppnar din e-postklient…",
-      description: "Meddelandet är förifyllt.",
+      title: "Öppnar e-postklient…",
+      description: "Din standardapp eller webmail får välja hur mejlet skickas.",
     });
 
     window.location.href = mailtoLink;
@@ -67,8 +67,8 @@ const Contact = () => {
             Hör gärna av dig
           </h2>
           <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground">
-            Jag är öppen för kontakt kring digitala projekt, automation,
-            AI-relaterade idéer och andra relevanta samarbeten.
+            Jag är öppen för kontakt kring jobb, relevanta samarbeten, digitala projekt,
+            automation eller andra professionella möjligheter.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ const Contact = () => {
           <Card className="p-8 shadow-sm border-border/60">
             <h3 className="text-xl font-semibold text-foreground">Skicka ett meddelande</h3>
             <p className="mt-2 text-sm sm:text-base text-muted-foreground">
-              Fyll i formuläret så öppnas ett färdigt mejl i din e-postklient.
+              Fyll i formuläret så öppnas ett färdigt mejl till mig i din e-postklient.
             </p>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-5">
@@ -139,10 +139,10 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-foreground">E-post</h3>
               </div>
               <p className="mt-3 text-muted-foreground">
-                För direkt kontakt eller enklare frågor.
+                För direkt kontakt, jobbrelaterade frågor eller enklare dialog.
               </p>
               <Button variant="outline" className="mt-6 w-full" asChild>
-                <a href="mailto:samct86@gmail.com">samct86@gmail.com</a>
+                <a href="mailto:sarmadtawfeek@gmail.com">sarmadtawfeek@gmail.com</a>
               </Button>
             </Card>
 
@@ -152,7 +152,7 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-foreground">LinkedIn</h3>
               </div>
               <p className="mt-3 text-muted-foreground">
-                Min professionella profil och arbetsbakgrund.
+                Min professionella profil, arbetsbakgrund och kontaktväg för rekryterare och arbetsgivare.
               </p>
               <Button variant="outline" className="mt-6 w-full" asChild>
                 <a
